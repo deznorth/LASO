@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.learning.deznorth.laso.LasoLobby">
+
+    <ImageView
+        android:id="@+id/topImage"
+        android:src="@drawable/latinamerica"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="8dp"
+        />
+    <GridLayout
+        android:layout_below="@id/topImage"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:rowCount="2"
+        android:columnCount="2">
+
+        <LinearLayout
+            android:layout_margin="8dp"
+            android:id="@+id/websiteLinkLayout"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1">
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/ic_tab_white_48dp"
+                android:scaleType="fitXY"
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+            <TextView
+                style="@style/BigText"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/websiteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="8dp"
+            android:id="@+id/eventsLinkLayout"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1">
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/ic_event_white_48dp"
+                android:scaleType="fitXY"
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+            <TextView
+                style="@style/BigText"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/eventsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="8dp"
+            android:id="@+id/loginLayout"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1">
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/loginImageView"
+                android:src="@drawable/ic_account_box_white_24dp"
+                android:scaleType="fitXY"
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+            <TextView
+                style="@style/BigText"
+                android:id="@+id/loginTextView"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/loginButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_width="125dp">
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/ic_code_white_48dp"
+                android:scaleType="fitXY"
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+            <TextView
+                style="@style/smallText"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/underDevelopment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+    </GridLayout>
+
+
+</RelativeLayout>

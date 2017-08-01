@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.learning.deznorth.laso.LoginActivity">
+
+        <ImageView
+            android:id="@+id/topImage"
+            android:src="@drawable/latinamerica"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            />
+        <TextView
+            android:id="@+id/registerLabel"
+            style="@style/BigText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/registerLabel"
+            android:layout_below="@id/topImage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            />
+        <EditText
+            style="@style/BigText"
+            android:id="@+id/fNameEditText"
+            android:hint="@string/firstNameHint"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/registerLabel"
+            android:layout_marginTop="18dp"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            style="@style/BigText"
+            android:id="@+id/lNameEditText"
+            android:hint="@string/lastNameHint"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/fNameEditText"
+            android:layout_marginTop="18dp"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            style="@style/BigText"
+            android:id="@+id/usernameEditText"
+            android:hint="@string/loginUsernameHint"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/lNameEditText"
+            android:layout_marginTop="18dp"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            style="@style/BigText"
+            android:id="@+id/passwordEditText"
+            android:inputType="textPassword"
+            android:hint="@string/loginPasswordHint"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/usernameEditText"
+            android:layout_marginTop="18dp"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            style="@style/BigText"
+            android:id="@+id/emailEditText"
+            android:hint="@string/emailHint"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/passwordEditText"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="18dp"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/registerButton"
+            style="@style/defaultButton"
+            android:onClick="onJoin"
+            android:text="@string/joinButton"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/emailEditText"
+            android:layout_marginTop="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+</ScrollView>

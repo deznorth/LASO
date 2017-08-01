@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.learning.deznorth.laso.LoginActivity">
+
+    <ImageView
+        android:id="@+id/topImage"
+        android:src="@drawable/latinamerica"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        />
+    <TextView
+        android:id="@+id/loginLabel"
+        style="@style/BigText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/loginLabel"
+        android:layout_below="@id/topImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        />
+    <EditText
+        style="@style/BigText"
+        android:id="@+id/usernameEditText"
+        android:hint="@string/loginUsernameHint"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/loginLabel"
+        android:layout_marginTop="18dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content" />
+    <EditText
+        style="@style/BigText"
+        android:id="@+id/passwordEditText"
+        android:inputType="textPassword"
+        android:hint="@string/loginPasswordHint"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/usernameEditText"
+        android:layout_marginTop="18dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/loginButton"
+        style="@style/defaultButton"
+        android:onClick="onLogin"
+        android:text="@string/loginButton"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/passwordEditText"
+        android:layout_marginTop="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        style="@style/smallText"
+        android:text="@string/noAccount"
+        android:onClick="onNoAccount"
+        android:layout_marginTop="18dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

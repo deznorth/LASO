@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">LASO</string>
+    <string name="underDevelopment">In Development</string>
+
+    <!--
+    Login Strings
+    -->
+    <string name="loginLabel">LOGIN</string>
+    <string name="firstNameHint">First Name</string>
+    <string name="lastNameHint">Last Name</string>
+    <string name="loginUsernameHint">Username</string>
+    <string name="loginPasswordHint">Password</string>
+    <string name="emailHint">Email</string>
+    <string name="loginButton">LOGIN</string>
+    <string name="noAccount">don\'t have an account?</string>
+    <!--
+    Register Strings
+    -->
+    <string name="registerLabel">REGISTER</string>
+    <string name="joinButton">JOIN!</string>
+    <!--
+    Profile Strings
+    -->
+    <string name="nameLabel">Name:</string>
+    <string name="emailLabel">Email:</string>
+
+    <!--
+    Lobby Strings
+    -->
+    <string name="websiteButton">Website</string>
+    <string name="eventsButton">Events</string>
+    <string name="lobbyLoginButton">Login</string>
+    <string name="profileButton">Profile</string>
+    <!--
+    Event Item Strings
+    -->
+    <string name="dateLabel">Date:</string>
+    <string name="locationLabel">Location:</string>
+    <string name="titleLabel">Title:</string>
+    <string name="descriptionLabel">Description:</string>
+
+</resources>
