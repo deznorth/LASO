@@ -42,4 +42,14 @@
         <item name="android:background">@color/defaultButtonDark</item>
     </style>
 
+    <style name="defaultBlackFont">
+        <item name="android:textColor">@color/basicBlack</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="defaultWhiteFont">
+        <item name="android:textColor">@color/basicWhite</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
 </resources>
