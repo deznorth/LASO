@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.learning.deznorth.laso.ProfileActivity">
+
+
+    <TextView
+        style="@style/BigText"
+        android:id="@+id/usernameLabel"
+        android:text="Username Label"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        style="@style/BigText"
+        android:id="@+id/nameLabel"
+        android:text="@string/nameLabel"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/usernameLabel"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+    <TextView
+        style="@style/defaultWhiteText"
+        android:id="@+id/nameText"
+        android:text="Name goes here"
+        android:layout_toRightOf="@id/nameLabel"
+        android:layout_below="@id/usernameLabel"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        style="@style/BigText"
+        android:id="@+id/emailLabel"
+        android:text="@string/emailLabel"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/nameLabel"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+    <TextView
+        style="@style/defaultWhiteText"
+        android:id="@+id/emailText"
+        android:text="Email goes here"
+        android:layout_toRightOf="@id/emailLabel"
+        android:layout_below="@id/nameText"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
