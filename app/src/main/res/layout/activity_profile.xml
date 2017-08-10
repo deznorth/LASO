@@ -52,5 +52,23 @@
         android:layout_marginBottom="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <TextView
+        style="@style/BigText"
+        android:id="@+id/roleLabel"
+        android:text="role:"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/emailLabel"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+    <TextView
+        style="@style/defaultWhiteText"
+        android:id="@+id/roleText"
+        android:text="Role goes here"
+        android:layout_toRightOf="@id/roleLabel"
+        android:layout_below="@id/emailText"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>

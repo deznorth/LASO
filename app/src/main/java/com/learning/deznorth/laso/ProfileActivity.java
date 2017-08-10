@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    private TextView textViewUsername, textViewName, textViewEmail;
+    private TextView textViewUsername, textViewName, textViewEmail, textViewRole;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +23,12 @@ public class ProfileActivity extends AppCompatActivity {
         textViewUsername = (TextView) findViewById(R.id.usernameLabel);
         textViewName = (TextView) findViewById(R.id.nameText);
         textViewEmail = (TextView) findViewById(R.id.emailText);
+        textViewRole = (TextView) findViewById(R.id.roleText);
 
         textViewUsername.setText(SharedPrefManager.getInstance(this).getUserName());
         textViewName.setText(SharedPrefManager.getInstance(this).getName());
         textViewEmail.setText(SharedPrefManager.getInstance(this).getUserEmail());
+        textViewRole.setText(String.valueOf(SharedPrefManager.getInstance(this).getUserRole()));
 
     }
 

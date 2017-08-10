@@ -60,9 +60,9 @@ public class LoginActivity extends AppCompatActivity {
                     JSONObject obj = new JSONObject(response);
                     if(!obj.getBoolean("error")){
                         SharedPrefManager.getInstance(getApplicationContext()).userLogin(obj.getInt("id"), obj.getString("username"),
-                                obj.getString("email"), obj.getString("fName"), obj.getString("lName"));
+                                obj.getString("email"), obj.getString("fName"), obj.getString("lName"), obj.getInt("role"));
 
-                        //Toast.makeText(getApplicationContext(),"Login Successful",Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getApplicationContext(),obj.getInt("role"),Toast.LENGTH_LONG).show();
 
                         finish();
                         startActivity(new Intent(getApplicationContext(), ProfileActivity.class));

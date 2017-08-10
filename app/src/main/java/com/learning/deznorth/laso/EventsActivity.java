@@ -46,7 +46,7 @@ public class EventsActivity extends Activity {
         @Override
         protected void onPreExecute() {
             JSON_URL = Constants.EVENTS_URL;
-            Log.i("logging url", JSON_URL);
+            //Log.i("logging url", JSON_URL);
 
         }
 
