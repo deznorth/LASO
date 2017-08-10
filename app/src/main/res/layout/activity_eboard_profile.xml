@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="16dp"
     android:layout_width="match_parent"
@@ -9,8 +8,17 @@
 
     <TextView
         style="@style/BigText"
+        android:id="@+id/adminLabel"
+        android:text="Admin Role"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+    <TextView
+        style="@style/BigText"
         android:id="@+id/usernameLabel"
         android:text="Username Label"
+        android:layout_below="@id/adminLabel"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,6 +57,24 @@
         android:text="Email goes here"
         android:layout_toRightOf="@id/emailLabel"
         android:layout_below="@id/nameText"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        style="@style/BigText"
+        android:id="@+id/roleLabel"
+        android:text="role:"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/emailLabel"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+    <TextView
+        style="@style/defaultWhiteText"
+        android:id="@+id/roleText"
+        android:text="Role goes here"
+        android:layout_toRightOf="@id/roleLabel"
+        android:layout_below="@id/emailText"
         android:layout_marginBottom="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

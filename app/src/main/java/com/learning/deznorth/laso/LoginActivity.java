@@ -32,9 +32,15 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         if(SharedPrefManager.getInstance(this).isLoggedIn()){
-            finish();
-            startActivity(new Intent(this, ProfileActivity.class));
-            return;
+            if(SharedPrefManager.getInstance(this).getUserRole()<1) {
+                finish();
+                startActivity(new Intent(this, ProfileActivity.class));
+                return;
+            }else if(SharedPrefManager.getInstance(this).getUserRole()>0) {
+                finish();
+                startActivity(new Intent(this, EboardProfileActivity.class));
+                return;
+            }
         }
 
         editTextUsername = (EditText) findViewById(R.id.usernameEditText);
@@ -63,9 +69,13 @@ public class LoginActivity extends AppCompatActivity {
                                 obj.getString("email"), obj.getString("fName"), obj.getString("lName"), obj.getInt("role"));
 
                         //Toast.makeText(getApplicationContext(),obj.getInt("role"),Toast.LENGTH_LONG).show();
-
-                        finish();
-                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                        if(obj.getInt("role")<1) {
+                            finish();
+                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                        } else if(obj.getInt("role")>0) {
+                            finish();
+                            startActivity(new Intent(getApplicationContext(), EboardProfileActivity.class));
+                        }
 
 
                     }else{
