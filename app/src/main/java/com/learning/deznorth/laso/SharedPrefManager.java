@@ -18,6 +18,14 @@ public class SharedPrefManager {
     private static final String KEY_USER_FIRST_NAME = "userfirstname";
     private static final String KEY_USER_LAST_NAME = "userlastname";
     private static final String KEY_ROLE = "userRole";
+    private static final String KEY_ROLE_TITLE = "roleTitle";
+    private static final String KEY_ROLE_DESCRIPTION = "roleDesc";
+    private static final String KEY_ROLE_POWER = "rolePower";
+    private static final String KEY_MEMBER_MANAGEMENT = "";
+    private static final String KEY_EBOARD_MANAGEMENT = "";
+    private static final String KEY_SUPER_EBOARD_MANAGEMENT = "";
+    private static final String KEY_EVENT_MANAGEMENT = "";
+
 
     private SharedPrefManager(Context context) {
         mCtx = context;
@@ -41,6 +49,30 @@ public class SharedPrefManager {
         editor.putString(KEY_USER_FIRST_NAME, fName);
         editor.putString(KEY_USER_LAST_NAME, lName);
         editor.putInt(KEY_ROLE, role);
+
+        editor.apply();
+
+        return true;
+    }
+
+    public boolean updateRole(String title, int power, String description){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putString(KEY_ROLE_TITLE, title);
+        editor.putString(KEY_ROLE_DESCRIPTION, description);
+        editor.putInt(KEY_ROLE_POWER, power);
+
+        editor.apply();
+
+        return true;
+    }
+
+    public boolean updateRoleId(int roleId){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putInt(KEY_ROLE, roleId);
 
         editor.apply();
 
@@ -83,6 +115,23 @@ public class SharedPrefManager {
     public int getUserRole(){
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getInt(KEY_ROLE, 0);
+
+    }
+    public String getRoleTitle(){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_ROLE_TITLE, null);
+
+    }
+
+    public String getRoleDescription(){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_ROLE_DESCRIPTION, null);
+
+    }
+
+    public int getRolePower(){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getInt(KEY_ROLE_POWER, 0);
 
     }
 

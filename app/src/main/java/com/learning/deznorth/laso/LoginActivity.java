@@ -70,11 +70,9 @@ public class LoginActivity extends AppCompatActivity {
 
                         //Toast.makeText(getApplicationContext(),obj.getInt("role"),Toast.LENGTH_LONG).show();
                         if(obj.getInt("role")<1) {
-                            finish();
-                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                            changeActivity(1);
                         } else if(obj.getInt("role")>0) {
-                            finish();
-                            startActivity(new Intent(getApplicationContext(), EboardProfileActivity.class));
+                            changeActivity(2);
                         }
 
 
@@ -103,6 +101,19 @@ public class LoginActivity extends AppCompatActivity {
 
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
 
+    }
+
+    private void changeActivity(int a){
+        switch(a){
+            case 1:
+                finish();
+                startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                break;
+            case 2:
+                finish();
+                startActivity(new Intent(getApplicationContext(), EboardProfileActivity.class));
+                break;
+        }
     }
 
 }

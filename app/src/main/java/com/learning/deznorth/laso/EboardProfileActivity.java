@@ -22,8 +22,8 @@ import java.util.Map;
 
 public class EboardProfileActivity extends AppCompatActivity {
 
-    private TextView textViewUsername, textViewName, textViewEmail, textViewRole;
-    private String mRoleTitle, mRoleDescription;
+    private TextView textViewUsername, textViewName, textViewEmail, textViewRole, TextViewAdminLabel;
+    private String mRoleDescription;
     private int mRolePower;
 
     @Override
@@ -35,15 +35,16 @@ public class EboardProfileActivity extends AppCompatActivity {
             startActivity(new Intent(this, LoginActivity.class));
         }
 
+
         textViewUsername = (TextView) findViewById(R.id.usernameLabel);
         textViewName = (TextView) findViewById(R.id.nameText);
         textViewEmail = (TextView) findViewById(R.id.emailText);
         textViewRole = (TextView) findViewById(R.id.roleText);
+        TextViewAdminLabel = (TextView) findViewById(R.id.adminLabel);
 
         textViewUsername.setText(SharedPrefManager.getInstance(this).getUserName());
         textViewName.setText(SharedPrefManager.getInstance(this).getName());
         textViewEmail.setText(SharedPrefManager.getInstance(this).getUserEmail());
-        textViewRole.setText(String.valueOf(SharedPrefManager.getInstance(this).getUserRole()));
 
 
 
@@ -52,7 +53,13 @@ public class EboardProfileActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        getRole();
+        updateRoleId();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateRole();
     }
 
     @Override
@@ -73,7 +80,47 @@ public class EboardProfileActivity extends AppCompatActivity {
         return true;
     }
 
-    private void getRole(){
+    private void updateRoleId(){
+
+        final String username = String.valueOf(SharedPrefManager.getInstance(this).getUserName());
+
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.POST, Constants.URL_ROLE_ID, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try{
+                    JSONObject obj = new JSONObject(response);
+
+                    if(!obj.getBoolean("error")){
+                        SharedPrefManager.getInstance(getApplicationContext()).updateRoleId(obj.getInt("role"));
+                        //Toast.makeText(getApplicationContext(),String.valueOf(mRolePower),Toast.LENGTH_LONG).show();
+                        textViewRole.setText(String.valueOf(obj.getInt("role")));
+                    }else{
+                        Toast.makeText(getApplicationContext(),obj.getString("message"),Toast.LENGTH_LONG).show();
+                    }
+                }catch(JSONException e){
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("username", username);
+                return params;
+            }
+        };
+
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
+    }
+
+    private void updateRole(){
 
         final String userRoleId = String.valueOf(SharedPrefManager.getInstance(this).getUserRole());
 
@@ -83,11 +130,13 @@ public class EboardProfileActivity extends AppCompatActivity {
             public void onResponse(String response) {
                 try{
                     JSONObject obj = new JSONObject(response);
+
                     if(!obj.getBoolean("error")){
-                        mRoleTitle = obj.getString("title");
-                        mRolePower = obj.getInt("power");
-                        mRoleDescription = obj.getString("description");
+                        SharedPrefManager.getInstance(getApplicationContext()).updateRole(obj.getString("title"), obj.getInt("power"), obj.getString("description"));
                         //Toast.makeText(getApplicationContext(),String.valueOf(mRolePower),Toast.LENGTH_LONG).show();
+                        TextViewAdminLabel.setText(obj.getString("title"));
+                        //textViewRole.setText(String.valueOf(obj.getInt("role")));
+                        mRolePower = obj.getInt("power");
                     }else{
                         Toast.makeText(getApplicationContext(),obj.getString("message"),Toast.LENGTH_LONG).show();
                     }
