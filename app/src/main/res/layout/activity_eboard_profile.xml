@@ -76,7 +76,7 @@
     <TextView
         style="@style/defaultWhiteText"
         android:id="@+id/roleText"
-        android:text="Role goes here"
+        android:text=""
         android:layout_toRightOf="@id/roleLabel"
         android:layout_below="@id/emailText"
         android:layout_marginBottom="16dp"
